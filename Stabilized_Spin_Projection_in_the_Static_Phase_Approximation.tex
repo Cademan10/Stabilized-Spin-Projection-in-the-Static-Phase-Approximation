@@ -1,0 +1,70 @@
+\documentclass[nofootinbib,showpacs,aps,twocolumn,preprintnumbers,letterpaper,prc]{revtex4-2}
+%\documentclass[reprint,prc]{revtex4-2}
+%\documentclass[reprint,aps]{revtex4-1}
+\usepackage{amsmath,amssymb,xspace,braket,float,tabularx}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage{tablefootnote}
+\usepackage[normalem]{ulem}
+
+\usepackage{subfigure}
+\usepackage{hhline}
+
+\usepackage[pdftex, pdfborder= 0 0 0, citecolor=blue, urlcolor=blue, linkcolor=blue, colorlinks=true, bookmarksopen=true]{hyperref}
+
+
+\newcommand{\ele}[2]{$^{#2}$#1\xspace}
+\newcommand{\ssec}[1]{\emph{#1}.---}
+
+%\usepackage{hyperref}
+%\usepackage[version=3]{mhchem}
+\bibliographystyle{apsrev4-2}
+\raggedbottom
+
+\begin{document}
+\title{Stabilized Spin Projection in the Static Phase Approximation}
+
+
+\author{C. Rodgers}
+\affiliation{Center for Theoretical Physics, Sloane Physics Laboratory, Yale University, New Haven, Connecticut 06520, USA}
+
+
+\maketitle
+
+\ssec{Introduction} \label{sec:intro}
+The calculation of spin projected quantities are vital in nuclear physics. The spin-distribution of level densities is a necessary input for Hauser-Feshbach calculations of nuclear reaction rates~\cite{Hauser1952}, including those relevant in astrophysical processes~\cite{Rauscher1997}. Further, spin projection of the free energy surface is a useful tool for studying shape fluctuations and giant resonances in hot, rotating nuclei~\cite{Alhassid1988,Alhassid1990,Alhassid1993a,Rossignoli1996,Alhassid1999}. Finally, the generalized Brink-Axel hypothesis~\cite{Brink1955,Axel1962} is an important, yet unproved, conjecture for studying gamma strength functions ($\gamma$SFs)~\cite{Markova2021,Larsen2017} which predicts that the gamma strength function is independent of, amongst other things, the nuclear spin. 
+
+Due to the importance of studying spin-projected thermal quantities in nuclei, a large range of methods have been employed to perform such a task. Mean-field methods utilizing the finite temperature cranked Hartree-Fock-Bogoliubov equations have been used successfully~\cite{Goodman1981,Goodman1995}, but they lack the ability to adequately account for statistical shape fluctuations, despite their importance at high excitation energies~\cite{Canto1985,Martin1995}. A Landau framework was developed to account for such fluctuations~\cite{Alhassid1990a,Alhassid1993a}, but it's a macroscopic theory that doesn't treat the nucleus at the constituent proton-neutron level.
+
+The configuration-interaction (CI) shell model can be used to calculate spin-projected observables in a way that is both fully microscopic and accounts for all statistical fluctuations~\cite{Spinella2014}. However, in heavy-mass nuclei the model space needed for performing such calculations is far too large to be computationally tractable. This can be overcome using the shell-model Monte Carlo method (SMMC)~\cite{Johnson1992,Lang1993,Alhassid1994,Koonin1997,Alhassid2001,Alhassid2017}, which provides a tractable way of performing microscopic calculations of thermal observables that has proved capable of capturing the full range of shape fluctuations in nuclei~\cite{Alhassid2014,Gilbreth2018,Mustonen2018}.
+
+The SMMC has been used for studying spin projection of simple observables~\cite{Alhassid2007}. While this provides exact values for the spin-projected observables (up to statistical error), it can still be computationally intensive to perform SMMC calculations for heavy nuclei. Further, the SMMC is susceptible to a Monte Carlo sign problem for realistic nuclear interactions that needs to be circumvented~\cite{Alhassid1994}.
+
+
+The static phase approximation~\cite{Lauritzen1988,Puddu1991,Alhassid1992,Rossignoli1998,Rossignoli1999} is a widely used method that utilizes the CI shell-model framework but is more computationally tractable than the SMMC, and can be applied to certain interactions for which the SMMC has a sign problem. The SPA has recently been used for studying strength functions and level densities as heavy as lanthanide and actinide nuclei~\cite{Fanto2021,DeMartini2025,Rodgers2025}
+
+While spin projection has been previously employed in the SPA, these implementations either require computing numerically intensive integrals~\cite{Kaneko2007,Rossignoli1993}, utilize a saddle-point approximation~\cite{Rossignoli1996} to perform the projection, or use a simplified nuclear model~$\cite{Alhassid1993}$.
+
+Here, we present a method for computing the exact spin projection of thermal observables in the SPA with a realistic nuclear interaction, following closely the method utilized in Ref.~\cite{Alhassid2007}. This method encounters a numerical sign problem at large values of $M$ due to the rapidly oscillating exponentials present in the Fourier sum, which can lead to nonphysical negative values for the partition function. We resolve this by introducing a real cranking frequency that serves to stabilize the sum, similar to what's done in Fourier-based particle number projection~\cite{Ormand1994,Fanto2017}
+
+In this work, we provide an overview of the method for performing exact spin projection in the SPA, along with a procedure for stabilizing the Fourier sum for large spins. We will use this method to calculate the spin distribution of the nuclear partition function for a wide range of nuclei of various masses, to prove the method is computationally tractable for large nuclei. We will compare our results to those calculated in the SMMC, to discern the accuracy of the SPA for spin projection.
+
+\ssec{Theoretical Framework} \label{sec:theory}
+
+
+\ssec{Results} \label{sec:res}
+
+\ssec{Conclusion} \label{sec:con}
+
+
+\bibliography{refs.bib}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
